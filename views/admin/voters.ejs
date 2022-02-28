@@ -1,0 +1,219 @@
+<div class="container-fluid">
+    <div class="text-center">
+        <% include ("../partials/messages") %>
+            <div class="row">
+                <div class="col d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 20px;">
+                    <i class="fa fa-users" style="font-size: 51px;padding-left: 0px;width: 80px;"></i>
+                    <h1>Add Voters</h1>
+                    <div class="d-xl-flex"></div>
+                </div>
+            </div>
+            <div class="row d-xl-flex">
+                <div class="col d-xl-flex justify-content-xl-end"><button class="btn btn-primary" type="button"
+                        style="background: rgba(78,115,223,0);border-color: rgb(255,102,0);color: rgb(255,102,0);"
+                        data-toggle="modal" data-target="#importModal">Import<i class="fa fa-upload"
+                            style="margin-left: 16px;"></i></button></div>
+                <div class="col d-xl-flex justify-content-xl-start"><button class="btn btn-primary" type="button"
+                        style="background: rgb(255,102,0);" data-toggle="modal" data-target="#addModal">Add Voter<i
+                            class="fa fa-plus" style="margin-left: 10px;"></i></button></div>
+            </div>
+    </div>
+
+
+    <div class="d-flex flex-column" id="content-wrapper">
+        <div id="content">
+            <div class="container-fluid">
+                <h3 class="text-dark mb-4">Eligible Voters</h3>
+                <div class="card shadow">
+                    <div class="card-header py-3">
+                        <p class="text-primary m-0 font-weight-bold">Employee Info</p>
+                    </div>
+                    <div class="card-body">
+                        <!-- <div class="row">
+                            <div class="col-md-6 text-nowrap">
+                                <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
+                                    <label>Show&nbsp;<select
+                                            class="form-control form-control-sm custom-select custom-select-sm">
+                                            <option value="10" selected="">10</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select>&nbsp;</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input
+                                            type="search" class="form-control form-control-sm" aria-controls="dataTable"
+                                            placeholder="Search"></label></div>
+                            </div>
+                        </div> -->
+                        <div class="table-responsive table mt-2" id="dataTable" role="grid"
+                            aria-describedby="dataTable_info">
+                            <table class="table my-0" id="dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Department</th>
+                                        <th>Sex</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (typeof allVoters !='undefined' ) { %>
+                                        <% allVoters.forEach(voter=> { %>
+                                            <tr>
+                                                <td>
+                                                    <%= voter.fullname %>
+                                                </td>
+                                                <td>
+                                                    <%= voter.department_name %>
+                                                </td>
+                                                <td>
+                                                    <%= voter.sex %>
+                                                </td>
+                                                <td>
+                                                    <%= voter.location_name %>
+                                                </td>
+                                            </tr>
+
+                                            <% }) %>
+                                                <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col-md-6 align-self-center">
+                                <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing
+                                    1 to
+                                    10 of 27</p>
+                            </div>
+                            <div class="col-md-6">
+                                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                    <ul class="pagination">
+                                        <li class="page-item disabled"><a class="page-link" href="#"
+                                                aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span
+                                                    aria-hidden="true">»</span></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" role="dialog" tabindex="-1" id="importModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background: rgb(255,102,0);">
+                <h4 class="modal-title" style="color: #f7f9fc;">Import Voters</h4><button type="button" class="close"
+                    data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <!-- <div class="row">
+                        <div class="col-xl-2 offset-xl-0" style="text-align: center;"><i class="fa fa-asterisk"></i>
+                        </div>
+                        <div class="col-xl-10">
+                            <h6><strong>Read import instructions</strong></h6>
+                            <p style="font-size: 13px;font-weight: normal;">To get started&nbsp;<a href="#"
+                                    style="color: #ff6600;">click here</a>&nbsp;to read the instruction on how to import
+                                voters</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-2" style="text-align: center;"><i class="fa fa-asterisk"></i></div>
+                        <div class="col-xl-10">
+                            <h6><strong>Download the imported template</strong></h6>
+                            <p style="font-size: 13px;font-weight: normal;"><a href="#" style="color: #ff6600;">Click
+                                    here&nbsp;</a>&nbsp;to download the voter import template and add one voter per
+                                row.<span style="color: #1e81c7;">The column in your spreadsheet must exactly match the
+                                    import template or the import will fail</span>.</p>
+                        </div>
+                    </div> -->
+                <div class="row">
+                    <div class="col" style="text-align: center;"><i class="fa fa-asterisk"
+                            style="font-size: 16pxs;"></i></div>
+                    <div class="col-xl-10">
+                        <h6 style="font-weight: bold;">Select the excel file from your computer</h6>
+                        <form action="/admin/upload/voters" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="voters_file" id=""
+                                    aria-describedby="helpId" placeholder="" required>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block mt-2">Import Voter</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" role="dialog" tabindex="-1" id="addModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background: rgb(255,102,0);">
+                <h4 class="modal-title" style="color: #f7f9fc;">Add Voter</h4><button type="button" class="close"
+                    data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="/admin/voters" method="POST">
+                    <div class="form-group">
+                        <label for="voters_name">Voter's Name</label>
+                        <input type="text" name="voters_name" id="voters_name" class="form-control"
+                            placeholder="Enter fullname " aria-describedby="" required>
+                        <small id="" class="text-muted"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="voter_sex">Sex</label>
+                        <select class="form-control" name="voter_sex" id="voter_sex" required>
+                            <option selected>Select Gender</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="voter_department">Departments</label>
+                        <select class="form-control" name="voter_department" id="voter_department" required>
+                            <option selected> Select Department</option>
+                            <% if (typeof allDepartments !='undefined' ) { %>
+                                <% allDepartments.forEach(d=> { %>
+                                    <option value="<%- d.department_id %>">
+                                        <%= d.department_name %>
+                                    </option>
+                                    <% }) %>
+                                        <% } %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="voter_location">Location</label>
+                        <select class="form-control" name="voter_location" id="voter_location" required>
+                            <option selected>Select Location</option>
+                            <% if (typeof allLocations !='undefined' ) { %>
+                                <% allLocations.forEach(l=> { %>
+                                    <option value="<%- l.location_id %>">
+                                        <%= l.location_name %>
+                                    </option>
+                                    <% }) %>
+                                        <% } %>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-info btn-block">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

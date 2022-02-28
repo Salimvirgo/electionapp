@@ -1,0 +1,114 @@
+<div class="container-fluid">
+    <div class="modal fade" role="dialog" tabindex="-1" id="addQuestion">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background: rgb(255,102,0);">
+                    <h4 class="modal-title" style="color: #f7f9fc;">Edit Ballot Question<br></h4><button type="button"
+                        class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <div><label>Title</label><input class="d-xl-flex input100" type="text" name="name"
+                            style="width: 100%;"
+                            placeholder="Enter the title of the ballot question (President,Vice President)"></div>
+                    <div><label>Description</label><textarea class="d-xl-flex"
+                            style="width: 100%;height: 200px;"></textarea></div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-danger" type="button" data-dismiss="modal">Delete<i
+                            class="fa fa-trash" style="margin-left: 9px;"></i></button><button class="btn btn-primary"
+                        type="button">Save</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="addOption">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background: rgb(255,102,0);">
+                    <h4 class="modal-title" style="color: #f7f9fc;">Edit Option<br></h4><button type="button"
+                        class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <div><label>Question</label><label class="d-xl-flex"><strong>Title</strong></label></div>
+                    <div class="row">
+                        <div class="col">
+                            <div><label>Title *</label><input class="d-xl-flex input100" type="text" name="name"
+                                    style="width: 100%;" placeholder="New Option"></div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div><label>Photo *</label><input type="file">
+                                <p style="margin-bottom: 0px;font-size: 11px;">Max file size: 2MB. Allowed types: .jpg,
+                                    .gif, .png<br></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div><label style="margin-top: 6px;">Short Description *</label><textarea class="d-xl-flex"
+                            style="width: 100%;height: 200px;"></textarea></div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-danger" type="button" data-dismiss="modal">Delete<i
+                            class="fa fa-trash" style="margin-left: 9px;"></i></button><button class="btn btn-primary"
+                        type="button">Save</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center ng-star-inserted">
+        <div class="col-md-12 p-5">
+            <div class="col d-xl-flex justify-content-xl-start">
+                <button class="btn btn-primary d-inline-flex pull-right" type="button"
+                    style="background: rgb(255,102,0);height: 39px;width: 151px;margin-left: -17px;" data-toggle="modal"
+                    data-target="#addQuestion">Add Question<i class="fa fa-plus"
+                        style="margin-left: 10px;"></i></button>
+            </div>
+        </div>
+        <div class="col-12 col-md-10 col-lg-8 align-content-center">
+            <div class="d-flex float-right flex-nowrap ml-auto">
+                <div class="dropdown" ngbdropdown="" placement="bottom-right"><button class="btn btn-primary"
+                        data-toggle="dropdown" aria-expanded="false" type="button"
+                        style="background: rgb(195,198,211);border-style: none;"><i class="fa fa-ellipsis-h"
+                            style="color: rgb(255,255,255);"></i></button>
+                    <div class="dropdown-menu"><a class="dropdown-item" href="#"><i class="fa fa-edit"
+                                style="margin-right: 8px;"></i>Edit</a><a class="dropdown-item" href="#"><i
+                                class="fa fa-user-plus" style="margin-right: 8px;"></i>Bulk Add Options<br></a>
+                        <hr><a class="dropdown-item" href="#"><i class="fa fa-chevron-up"
+                                style="margin-right: 8px;"></i>Move Up</a><a class="dropdown-item" href="#"><i
+                                class="fa fa-chevron-down" style="margin-right: 8px;"></i>Move Down</a>
+                        <hr><a class="dropdown-item" href="#"><i class="fa fa-trash"
+                                style="margin-right: 8px;"></i>Delete</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3><strong>PRESIDENTIAL BALLOT</strong></h3>
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-toggle="tab"
+                            href="#tab-1"
+                            style="font-size: 21px;margin-left: 0px;margin-right: 0px;color: rgb(0,0,0);"><i
+                                class="fa fa-list-ul"
+                                style="font-size: 21px;margin-right: 8px;"></i><strong>Candidate</strong></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="tab"
+                            href="#tab-2" style="font-size: 21px;color: rgb(0,0,0);"><i class="fa fa-file-pdf-o"
+                                style="margin-right: 8px;"></i><strong>Attachment</strong></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="tab-1"><input type="text"
+                            class="alert alert-info ng-star-inserted"
+                            style="width: 100%;margin-top: 10px;padding-left: 53px;"
+                            placeholder="Click the &quot;Add Candidate &quot; button below to add a Candidate to this question">
+                        <button class="btn btn-primary" type="button" style="margin-top: 17px;background: #ff6600;"
+                            data-toggle="modal" data-target="#addOption"><i class="fa fa-plus"
+                                style="margin-right: 8px;"></i>Add Candidate</button>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-2">
+                        <p>You can attach up to&nbsp;<strong>3</strong>&nbsp;documents to this question.&nbsp;<a
+                                href="https://electionrunner.com/support/ballot/how-to-add-attachments-to-ballot-questions/">Learn
+                                more</a>&nbsp;about ballot question
+                            attachments.<br></p><button class="btn btn-primary" type="button" onclick="importData()"
+                            style="margin-left: 0px;margin-right: 0px;background: #ff6600;"><i class="fa fa-file-text-o"
+                                style="margin-left: 0px;margin-right: 8px;"></i>Select a file</button>
+                        <p style="margin-top: 6px;">Max file size: 3MB.<br>Allowed file types: .jpg, .gif, .png, .pdf,
+                            .doc, .docx, .xls, .xlsx, .ppt, .pptx, .csv, .txt<br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

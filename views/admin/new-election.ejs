@@ -1,0 +1,179 @@
+<div class="container" _ngcontent-c5="">
+    <div class="text-xl-center d-xl-flex justify-content-xl-center align-items-xl-center row align-content-center"
+        style="margin-top: 15px;margin-bottom: 8px;"><img class="d-xl-flex align-items-xl-start"
+            src="/images/766px-Orange_logo.svg.png?h=366615f413b9869426f92ca4170f5bc0"
+            style="width: 45px;margin-top: -10px;margin-right: 19px;height: 42px;">
+        <h1 style="font-weight: bold;">OSL Women Election</h1>
+    </div>
+    <div class="row">
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Election Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-success" role="alert">
+                            <p>Successfully Updated Election</p>
+                        </div>
+                        <div class="alert alert-danger" role="alert">
+                            <p>Error Updating Election</p>
+                        </div>
+                        <form class="ng-pristine ng-invalid ng-touched" method="POST" action="#" id="frmUpdateElection">
+                            <div class="form-group has-danger">
+                                <label appformlabeldangericon="" for="title"> Election
+                                    Title &nbsp;<i class="fa fa-star danger-icon icon-attention"></i></label>
+                                <input
+                                    class="form-control form-control form-control-lg title-input ng-pristine ng-invalid ng-touched"
+                                    type="text" appfocusme="" formcontrolname="title" id="" />
+
+
+                                <div class=" form-control-feedback ng-star-inserted">
+                                    <p>The election title must be between 5 and 200 characters<br></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group"><label>Start Date</label>
+                                        <div class="well">
+                                            <div class="input-append date"><input class="form-control flatpickr-input"
+                                                    type="date" id="" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group"><label>End Date</label>
+                                        <div class="well">
+                                            <div class="input-append date"><input class="form-control flatpickr-input"
+                                                    type="date" id="" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-info">Update
+                                Election</i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of modal -->
+
+        <div class="col-12 col-md-12 col-lg-12">
+
+            <div class="text-center">
+                <h1 class="display-4 mb-4">Create Election</h1>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <% include ("../partials/messages") %>
+                        <div class="alert alert-success dismissible fade show" role="alert" id="alertModal">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                <span class="sr-only">Close</span>
+                            </button>
+                            <p id="alertSuccess"></p>
+                        </div>
+                        <form class="ng-pristine ng-invalid ng-touched mt-5" method="POST" action="#"
+                            id="frmNewElection">
+                            <div class="form-group has-danger mb-5">
+                                <label appformlabeldangericon="" for="title"> Election
+                                    Title &nbsp;<i class="fa fa-star danger-icon icon-attention"></i></label>
+                                <input
+                                    class="form-control form-control form-control-lg title-input ng-pristine ng-invalid ng-touched"
+                                    type="text" appfocusme="" formcontrolname="title" id="electionTitle"
+                                    placeholder="e.g. Homecoming Court, Board of Directors">
+                                <div class="form-control-feedback ng-star-inserted">
+                                    <p>The election title must be between 5 and 200 characters<br></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group"><label>Start Date</label>
+                                        
+                                        <div class="well">
+                                            <div class="input-append date"><input class="form-control flatpickr-input"
+                                                    type="date" id="electionStartDate" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group"><label>End Date</label>
+                                        <div class="well">
+                                            <div class="input-append date"><input class="form-control flatpickr-input"
+                                                    type="date" id="electionEndDate" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn " style="background: #ff6600; color: #fff;"><i
+                                    class="fa fa-chevron-right" style="margin-left: 9px;"> &nbsp; Create
+                                    Election</i></button>
+                        </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md- col-lg-12">
+            <div class="row mt-4">
+                <% if (typeof elections !=' undefined' ) { %>
+                    <% elections.forEach(election=> { %>
+                        <div class="col-md-4 my-4">
+                            <div class="card election-card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center" style="text-transform: capitalize;">
+                                        <strong>
+                                            <%- election.title %>
+                                        </strong>
+                                    </h5>
+                                    <p class="card-text">
+                                        Start Date: &nbsp; <strong>
+                                            <%- election.start_date %>
+                                        </strong>
+                                    </p>
+                                    <p class="card-text">
+                                        End Date: &nbsp; <strong>
+                                            <%- election.end_date %>
+                                        </strong>
+                                    </p>
+                                    <span class="badge badge-primary">
+                                        <%- election.status_name %>
+                                    </span>
+                                </div>
+                                <div class="card-footer">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-info " data-toggle="modal"
+                                        data-target="#modelId">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </button>
+
+                                    <a type="button" data-toogle="tooltip" data-placement="top" title="Delete"
+                                        href="/admin/election/delete/<%= election.election_id %>"
+                                        class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                                    <a type="button" data-toogle="tooltip" data-placement="top" title="Delete"
+                                        href="/admin/add_ballot" class="btn btn-danger pull-right">Create Ballots</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <% }) %>
+                            <% } %>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>

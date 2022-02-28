@@ -1,0 +1,181 @@
+<div class="container">
+    <div>
+        <div class="row">
+            <div class="col-8">
+                <div>
+                    <div class="row" style="margin-bottom: 23px;">
+                        <div class="col-12 py-3 text-center">
+                            <h1>
+                                <%= typeof election_title !='undefined' ?election_title:"" %> Election
+                            </h1>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary d-xl-flex justify-content-xl-center m-0 font-weight-bold"
+                                                style="font-weight: bold;"><i class="fa fa-calendar"
+                                                    style="margin-left: 0;margin-right: 11px;height: 12px;margin-top: 3px;"></i>Start
+                                                Date</p>
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <p style="font-weight: bold; font-size: 1.5rem;">
+                                                <%= typeof election_start_date !='undefined' ? election_start_date :''
+                                                    %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary d-xl-flex justify-content-xl-center align-items-xl-center m-0 font-weight-bold"
+                                                style="font-weight: bold;">End Date<i class="fa fa-calendar"
+                                                    style="margin-left: 11px;"></i></p>
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <p style="font-weight: bold; font-size: 1.5rem;">
+                                                <%= typeof election_end_date !='undefined' ? election_end_date :'' %>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card shadow mb-3">
+                                <div class="card-header py-3">
+                                    <p class="text-primary d-xl-flex justify-content-xl-center m-0 font-weight-bold"
+                                        style="font-weight: bold;">Election URLs<i class="fa fa-globe"
+                                            style="margin-left: 13px;"></i></p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group"><label><strong>Election
+                                                URL</strong><br></label>
+                                        <div class="input-group"><input class="d-xl-flex form-group" type="text"
+                                                value="http://localhost:5000/" style="width: 100%;"></div><span style="font-size: 12px;"><i
+                                                class="fa fa-info" style="margin-right: 5px;"></i>Copy this URL and send to all voters.<br></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <div class="col" style="margin-bottom: 0;">
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col">
+                                <div class="card" style="background: rgb(255, 208, 0);height: 100px;">
+                                    <div class="card-body" style="background: rgba(249,0,224,0);color: #f7f9fc;">
+                                        <div class="row">
+                                            <div class="col"><i class="fa fa-download" style="font-size: 57px;"></i></div>
+                                            <div class="col text-right">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h1>
+                                                            <%= typeof votes !='undefined' ? votes : 0 %>
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h1 style="font-size: 14px;">Votes Cast</h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col">
+                                <div class="card" style="background: rgb(255,0,184);height: 100px;">
+                                    <div class="card-body" style="background: rgba(249,0,224,0);color: #f7f9fc;">
+                                        <div class="row">
+                                            <div class="col"><i class="fa fa-users" style="font-size: 57px;"></i></div>
+                                            <div class="col text-right">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h1>
+                                                            <%= typeof voters !='undefined' ? voters : 0 %>
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h1 style="font-size: 14px;">voters</h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" style="background: #ff6600;margin-bottom: 10px;height: 100px;">
+                                    <div class="card-body" style="background: rgba(249,0,224,0);color: #f7f9fc;">
+                                        <div class="row">
+                                            <div class="col"><i class="fa fa-pencil" style="font-size: 57px;"></i></div>
+                                            <div class="col text-right">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h1>
+                                                            <%= typeof ballots !='undefined' ? ballots : 0 %>
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h1 style="font-size: 14px;">Ballot Question
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" style="background: #0044cc;">
+                                    <div class="card-body"
+                                        style="background: rgba(249,0,224,0);color: #f7f9fc;height: 100px;">
+                                        <div class="row">
+                                            <div class="col"><i class="fa fa-list-ul"
+                                                    style="font-size: 57px;height: 65px;width: 71px;"></i>
+                                            </div>
+                                            <div class="col text-right">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h1>
+                                                            <%= typeof candidates !='undefined' ?candidates:0 %>
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h1 style="font-size: 14px;">Candidates</h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

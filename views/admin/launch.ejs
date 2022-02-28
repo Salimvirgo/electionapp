@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="media d-flex flex-row align-items-center my-3"
+                style="padding: 20px;border-left:10px solid rgb(255,102,0); box-shadow: 10px 12px 13px -7px rgba(179,154,179,1)">
+                <div class="media-body">
+                    <h1 class="display-4">
+                        <%= typeof election_title !='undefined' ? election_title:'' %>
+                    </h1>
+                    <p class="media-text" style="font-weight:bold; font-size:1.5rem">
+                        Election Starts: <strong>
+                            <%= typeof election_start_date !='undefined' ? election_start_date :'' %>
+                        </strong>
+                    </p>
+                    <p class="media-text" style="font-weight:bold; font-size:1.5rem">
+                        Election Ends: <strong>
+                            <%= typeof election_start_date !='undefined' ? election_start_date :'' %>
+                        </strong>
+                    </p>
+
+                    <% if (election_status==="Begining" ) { %>
+                        <p>Election has not yet started. You can launch it from here</p>
+                        <% } %>
+                </div>
+                <a class="d-flex mx-5 text-center" href="#"
+                    style="font-size: 4rem; color: rgb(255,102,0); background: #f1f1f1; padding: 10px; border-radius: 50%;">
+                    <i class="fa fa-rocket" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

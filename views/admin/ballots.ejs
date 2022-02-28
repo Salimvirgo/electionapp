@@ -1,0 +1,98 @@
+<div class="container-fluid">
+    <div class="text-center" style="margin-top: 20%;">
+        <div class="row">
+            <div class="col d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 20px;"><i
+                    class="fa fa-list-ul" style="font-size: 51px;padding-left: 0px;width: 80px;height: 60px;"></i>
+                <h1>Build Your Ballot</h1>
+                <div class="d-xl-flex"></div>
+            </div>
+        </div>
+        <div class="row d-xl-flex">
+            <div class="col d-xl-flex justify-content-xl-center"><a class="btn btn-primary" role="button"
+                    style="background: rgb(255,102,0);" href="/admin/add_ballot">Add Ballot<i class="fa fa-plus"
+                        style="margin-left: 10px;"></i></a></div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="importModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background: rgb(255,102,0);">
+                    <h4 class="modal-title" style="color: #f7f9fc;">Import Voters</h4><button type="button"
+                        class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xl-2 offset-xl-0" style="text-align: center;"><i class="fa fa-asterisk"></i>
+                        </div>
+                        <div class="col-xl-10">
+                            <h6><strong>Read import instructions</strong></h6>
+                            <p style="font-size: 13px;font-weight: normal;">To get started&nbsp;<a href="#"
+                                    style="color: #ff6600;">click here</a>&nbsp;to read the instruction on how to import
+                                voters</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-2" style="text-align: center;"><i class="fa fa-asterisk"></i></div>
+                        <div class="col-xl-10">
+                            <h6><strong>Download the imported template</strong></h6>
+                            <p style="font-size: 13px;font-weight: normal;"><a href="#" style="color: #ff6600;">Click
+                                    here&nbsp;</a>&nbsp;to download the voter import template and add one voter per
+                                row.<span style="color: #1e81c7;">The column in your spreadsheet must exactly match the
+                                    import template or the import will fail</span>.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align: center;"><i class="fa fa-asterisk"
+                                style="font-size: 16pxs;"></i></div>
+                        <div class="col-xl-10">
+                            <h6 style="font-weight: bold;">Select the import file from your computer</h6><input
+                                type="file">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="addModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background: rgb(255,102,0);">
+                    <h4 class="modal-title" style="color: #f7f9fc;">Add Voter</h4><button type="button" class="close"
+                        data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <div><label>Name</label><input class="d-xl-flex input100" type="text" name="name"
+                            style="width: 100%;" placeholder="Please enter full name of the voter"></div>
+                    <div>
+                        <div class="row" style="margin-top: 4px;">
+                            <div class="col"><label>Department</label><select>
+                                    <optgroup label="This is a group">
+                                        <option value="12" selected="">This is item 1</option>
+                                        <option value="13">This is item 2</option>
+                                        <option value="14">This is item 3</option>
+                                    </optgroup>
+                                </select></div>
+                            <div class="col"><label>Sex</label><select>
+                                    <optgroup label="This is a group">
+                                        <option value="12" selected="">This is item 1</option>
+                                        <option value="13">This is item 2</option>
+                                        <option value="14">This is item 3</option>
+                                    </optgroup>
+                                </select></div>
+                            <div class="col"><label>Location</label><select>
+                                    <optgroup label="This is a group">
+                                        <option value="12" selected="">This is item 1</option>
+                                        <option value="13">This is item 2</option>
+                                        <option value="14">This is item 3</option>
+                                    </optgroup>
+                                </select></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light" type="button"
+                        data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
